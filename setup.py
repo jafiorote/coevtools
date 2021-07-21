@@ -1,13 +1,13 @@
 from setuptools import setup
 
-setup(name='Docking Score Module',
+setup(name='Coevtools',
       version='0.1',
       description='',
-      url='https://github.com/jafiorote/dsm',
+      url='https://github.com/jafiorote/coevtools',
       author='José Antonio Fiorote',
       author_email='jafiorote@gmail.com',
-      license='MIT',
-      packages=['dsm'],
+      license='GPL 3.0',
+      packages=['coevtools'],
       install_requires=[
             'biopython',
             'python-Levenshtein',

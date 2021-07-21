@@ -20,7 +20,7 @@ class Information:
     def pair_freq(cls, msa, ics, sitefreq_array, lambda_=0.001, swap_idx=None):
 
         pair_freq = np.zeros((len(ics), msa.q, len(ics), msa.q), dtype=float)
-        encoded = msa.sub_full_MSA(ics, swap_idx)
+        encoded = msa.MSA_AB(ics, swap_idx)
         for i in range(len(ics)):
             for j in range(len(ics)):
                 np.add.at(pair_freq, [i, encoded[:, i], j, encoded[:, j]], msa.sequence_weight.reshape(-1, 1)[:, 0])
@@ -39,11 +39,11 @@ class Information:
         return pair_freq
 
     @classmethod
-    def shannon_info(cls, msa, model, site_freq, pair_freq):
+    def shannon_info(cls, msa, pdb, site_freq, pair_freq):
 
-        contact_map = model.contact_map
-        A_ICs = model.A_ICs
-        B_ICs = model.shift_B_ICs
+        contact_map = pdb.pairs_shift
+        A_ICs = pdb.A_ICs
+        B_ICs = pdb.shift_B_ICs
         nA = len(A_ICs)
         nB = len(B_ICs)
 
