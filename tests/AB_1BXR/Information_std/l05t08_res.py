@@ -1,0 +1,9 @@
+theta_ = 0.8
+lambda_ = 0.5
+models = ['1BXR_AB.pdb']
+MIs = [50.119832320270845]
+Entropies = [693.80221555484854]
+MIs_by_h = [0.072239366200623822]
+Number_of_Pairs = [154]
+MIs_by_npairs = [0.32545345662513536]
+meff = 492.13704348366355
